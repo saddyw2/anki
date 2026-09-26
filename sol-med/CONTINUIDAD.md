@@ -9,7 +9,7 @@ reinterpretar nada. Actualízalo al cerrar cada versión.
 - **Versión:** 1.0.0 (V1 funcional) · esquema de datos `schema: 1`.
 - **Revisión médica del contenido:** 2026‑09‑26.
 - **Ubicación del código:** carpeta `sol-med/` del repositorio `saddyw2/anki`, rama `claude/sol-med-w88ynn`. Es un proyecto independiente de Anki: puede moverse tal cual a un repositorio propio (`sol-med`).
-- **Publicación:** Artifact privado de claude.ai creado a partir de `dist/sol-med-artifact.html`. Para actualizarlo, se vuelve a publicar ese archivo en la misma URL del Artifact.
+- **Publicación:** Artifact privado de claude.ai https://claude.ai/artifact/ABVRXd6rYHmRkS6EfgPMws (capacidades `db`, `user`, `downloads`), creado a partir de `dist/sol-med-artifact.html`. Para actualizarlo: `npm run build` y volver a publicar ese archivo pasando esa URL (así se conserva el enlace y los datos).
 
 ## 2. Arquitectura y tecnologías
 
@@ -129,7 +129,7 @@ SolMed.registry.addTopic({
 ⚠️ **Parcial**
 - **Razonamiento abierto:** se corrige con autoevaluación asistida por palabras clave, no con un corrector semántico.
 - **PWA instalable:** lista, pero solo se instala cuando la carpeta se aloja por HTTPS. Dentro de claude.ai no hay service worker ni instalación.
-- **Cuenta y sincronización:** dentro de claude.ai se usan la cuenta de Claude y la base de datos privada del Artifact. La lógica se probó con una base de datos simulada; la primera sincronización real se verifica al abrirlo en claude.ai. La versión local no tiene cuenta propia.
+- **Cuenta y sincronización:** dentro de claude.ai se usan la cuenta de Claude y la base de datos privada del Artifact. La lógica se probó con una base de datos simulada (dos dispositivos, borrado, 1.203 intentos) y, tras publicar, se comprobó que la página crea el documento `data/users/<id>/profile` en el espacio privado real. Falta ver en uso real la sincronización PC ↔ Android con intentos. La versión local no tiene cuenta propia.
 
 ⏳ **Preparado para después**
 - Cuenta propia de Sol MED (correo, contraseña, recuperación, passkeys) independiente de claude.ai: requiere elegir un proveedor (por ejemplo Supabase o Firebase) → **decisión del usuario** (servicio externo, posible coste y privacidad). `sync.js` ya abstrae el almacenamiento remoto: bastaría un adaptador nuevo con `pull()` y `push()`.
@@ -173,7 +173,7 @@ SolMed.registry.addTopic({
 - La autoevaluación del razonamiento depende de la honestidad de quien responde.
 - Los rangos de referencia son orientativos (adultos); pueden no coincidir con tu laboratorio.
 - Al reanudar una sesión se retoma desde el principio del ejercicio en curso (no desde un paso intermedio de un caso).
-- La primera sincronización real con la base de datos de claude.ai no pudo probarse fuera de claude.ai.
+- La sincronización real con intentos entre dos dispositivos se verificará con el uso (la conexión y el perfil ya se comprobaron en claude.ai).
 - Sin errores conocidos pendientes tras las 19 pruebas unitarias y las 29 comprobaciones en navegador.
 
 ## 11. Cómo ampliar sin romper la arquitectura
