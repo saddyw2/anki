@@ -1,0 +1,12 @@
+{
+  "name": "sol-med",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sol MED — Centro personal de entrenamiento clínico",
+  "scripts": {
+    "start": "npx --yes http-server -p 8080 -c-1 .",
+    "build": "node tools/build.mjs",
+    "test": "node --test tests/unit.mjs",
+    "e2e": "node tools/build.mjs && node tests/e2e.mjs"
+  }
+}

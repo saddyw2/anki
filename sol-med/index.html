@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Sol MED</title>
+<meta name="description" content="Sol MED — Centro personal de entrenamiento clínico">
+<meta name="theme-color" content="#C2447F">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/solmed.css">
+</head>
+<body>
+<div id="app" class="app">
+  <noscript>Sol MED necesita JavaScript activado.</noscript>
+</div>
+
+<!-- Núcleo (lógica). No contiene contenido médico. -->
+<script src="js/core/namespace.js"></script>
+<script src="js/core/util.js"></script>
+<script src="js/core/registry.js"></script>
+
+<!-- Contenido médico modular. Para añadir un tema: crea su archivo y añade aquí una línea. -->
+<script src="content/taxonomia.js"></script>
+<script src="content/fuentes.js"></script>
+<script src="content/valores/metabolismo.js"></script>
+<script src="content/valores/electrolitos.js"></script>
+<script src="content/valores/renal.js"></script>
+<script src="content/valores/gasometria.js"></script>
+<script src="content/valores/tiroides.js"></script>
+<script src="content/valores/neuro.js"></script>
+<script src="content/calculos.js"></script>
+<script src="content/comparaciones.js"></script>
+<script src="content/temas/cad.js"></script>
+<script src="content/temas/ehh.js"></script>
+<script src="content/temas/hipotiroidismo.js"></script>
+<script src="content/temas/hipertiroidismo.js"></script>
+<script src="content/temas/hsa.js"></script>
+
+<!-- Motor, almacenamiento y sincronización -->
+<script src="js/core/store.js"></script>
+<script src="js/core/engine.js"></script>
+<script src="js/core/gen.js"></script>
+<script src="js/core/sync.js"></script>
+
+<!-- Interfaz -->
+<script src="js/ui/dom.js"></script>
+<script src="js/ui/charts.js"></script>
+<script src="js/ui/runner.js"></script>
+<script src="js/ui/views-home.js"></script>
+<script src="js/ui/views-study.js"></script>
+<script src="js/ui/views-values.js"></script>
+<script src="js/ui/views-exam.js"></script>
+<script src="js/ui/views-progress.js"></script>
+<script src="js/ui/views-more.js"></script>
+<script src="js/ui/app.js"></script>
+</body>
+</html>
